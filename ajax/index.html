@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body>
+
+    <h1>hello</h1>
+    <button id="save">保存</button>
+    <div id="searchResult">neirong </div>
+    <script>
+
+        document.getElementById("save").onclick = function () {
+            var request  = new XMLHttpRequest();
+            request.open('GET', 'http://v.juhe.cn/toutiao/index?type=&key=d904a524b2822f6191ec745995e67f16', true);
+            request.responseType = 'text';
+            request.send();
+            request.onreadystatechange = function () {
+                if(request.readyState == 4 && request.status == 200){
+                    document.getElementById("searchResult").innerHTML = request.responseText;
+                }else{
+                    alert("发生错误" + request.status);
+                }
+            }
+
+        };
+
+
+
+
+
+    </script>
+
+</body>
+</html>

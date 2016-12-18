@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>jquery scroll </title>
+		<script src="http://apps.bdimg.com/libs/jquery/2.1.1/jquery.min.js"></script>
+	</head>
+	<body>
+		
+		<div style="height: 3000px; width: 100%;"></div>
+		<script type="text/javascript">
+			
+			$(window).scroll(function(){
+				var ks_area = $(window).height();
+				var wholeHeight = $(document).height();
+				var scrolltop = $(window).scrollTop();
+				if(ks_area + scrolltop >= wholeHeight){
+					alert("滚动到底部了");
+				}
+				
+				if(scrolltop == 0){
+					alert("滚动到顶部了");
+				}
+				
+			});
+			
+			
+		</script>
+		
+		
+	</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style type="text/css">
+        #mdiv{
+            width:200px;
+            height: 200px;
+            background: red;
+            border:1px solid #000000;
+            overflow: auto;
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="mdiv"></div>
+
+
+<script type="text/javascript">
+
+    var mdiv = document.getElementById("mdiv");
+    mdiv.onclick = function () {
+
+    };
+    console.log(mdiv.clientHeight);
+    console.log(mdiv.clientWidth);
+
+</script>
+
+</body>
+</html>

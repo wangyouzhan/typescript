@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>可视区域加载demo</title>
+	</head>
+
+	<body>
+
+		<div id="showDiv"></div>
+
+		<style type="text/css">
+			#showDiv {
+				width: 500px;
+				height: 350px;
+				background-color: red;
+				margin: 1000px auto 0 auto;
+			}
+			
+			
+			@-webkit-keyframes fadeIn {
+				0% {
+					opacity: 0;
+					-webkit-transform: translate3d(-100%, 0, 0);
+					transform: translate3d(-100%, 0, 0)
+				}
+				100% {
+					opacity: 1;
+					-webkit-transform: none;
+					-ms-animation: none;
+					transform: none;
+				}
+			}
+			
+			.fadeInLeft {
+				-webkit-animation-name: fadeIn;
+				animation-name: fadeIn;
+				-webkit-animation-duration: 2s;
+				animation-duration: 2s;
+			}
+		</style>
+
+		<script type="text/javascript">
+			function showDiv() {
+				
+				var showId = document.getElementById("showDiv");
+				console.log(showId);
+				var clients = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+				var divTop = showId.getBoundingClientRect().top;
+				if(divTop <= clients) {
+					showId.classList.add("fadeInLeft");
+				}
+			}
+
+			window.onscroll = showDiv;
+		</script>
+	</body>
+
+</html>
