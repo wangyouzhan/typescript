@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html ng-app="bookapp">
+	<head>
+		<meta charset="UTF-8">
+		<title>binding data</title>
+
+	</head>
+	<body>
+		<div ng-controller="helloModule">
+				{{greeting.test}}
+		</div>
+
+		<div ng-controller="CommonController">
+			<div ng-controller="Controller1">
+				<p>{{greeting.text}}, Angular</p>
+				<button ng-click="test1()">test1</button>
+			</div>
+			<div ng-controller="Controller2">
+				<p>{{greeting.text}}, Angular</p>
+				<button ng-click="commonFn()">通用</button>
+				<button ng-click="test2()">test2</button>
+			</div>
+		</div>
+		<script type="text/javascript" src="angular.js"></script>
+		<script type="text/javascript" src="HelloAngular_Directive.js"></script>
+		
+		
+		
+	</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
