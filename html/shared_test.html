@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        /*分享*/
+        .weixinFenxiangBox  {
+            background-clip: padding-box;
+            background-color: #FFFFFF;
+            border: 1px solid rgba(0, 0, 0, 0.3);
+            border-radius: 6px 6px 6px 6px;
+            box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+            left: 50%;
+            margin: -200px 0 0 -200px;
+            position: fixed;
+            top: 50%;
+            width: 360px;
+            height: 360px;
+            overflow: hidden;
+            text-align: left;
+            display: none;
+        }
+        .weixinFenxiangBoxT{
+            border-bottom: 1px solid #EEEEEE;
+            padding: 9px 15px;
+            line-height: 30px;
+            font-size: 14px;
+        }
+        .weixinFenxiangBoxT span{
+            cursor: pointer;
+            padding: 0 10px;
+        }
+        .weixinFenxiangBoxC{
+            height: 250px;
+            overflow: hidden;
+            text-align: center;
+        }
+        .weixinFenxiangBoxC>img{
+            margin-top: -25px;
+        }
+        .weixinFenxiangBoxB{
+            border-radius: 0 0 6px 6px;
+            border-top: 1px solid #DDDDDD;
+            box-shadow: 0 1px 0 #FFFFFF inset;
+            padding: 0 10px;
+            padding-top: 11px;
+            text-align: left;
+            font-size: 12px;
+        }
+
+
+    </style>
+</head>
+<body>
+
+<div class="myfenxaing">
+    <span class="l pos-r" style="top: 6px;">分享到 :</span>
+    <a type="WX" title="分享到微信" class=" " onclick="sharePlatform(this)">微信</a>
+    <a type="WB" title="分享到新浪微博" class="" onclick="sharePlatform(this)">微博</a>
+    <a type="QZ" title="分享到QQ空间" class="" onclick="sharePlatform(this)">qq空间</a>
+    <div class="weixinFenxiangBox" style="display: none;">
+        <div class="weixinFenxiangBoxT">分享到微信朋友圈 <span id="wxBClose" class="r col999">x</span></div>
+        <div class="weixinFenxiangBoxC"><img id="weixinFenxiangBoxCImg" src="http://www.gbtags.com/gb/qrcode?t=http://www.qualityonline.com.cn/doc/view/836&amp;s=300"></div>
+        <div class="weixinFenxiangBoxB">打开微信，点击底部的“发现”，使用 “扫一扫” 即可将网页分享到我的朋友圈。 </div>
+    </div>
+</div>
+
+
+</body>
+<script type="text/javascript" src="http://www.qualityonline.com.cn/static/js/jquery.min.js"></script>
+<script type="text/javascript">
+
+
+    function sharePlatform(typeObject) {
+        var type = typeObject.type;
+        openFenxiang(type,'送话费活动','邀请好友送话费:好友首次注册可获得10元话费,推荐人最多可获得30元话费！惊喜多多...','http://www.cape.com.cn/themes/default/images/logo.jpg',
+            '','http://www.cape.com.cn/activity_new.php?act=invite');
+
+    }
+
+
+    //分享
+    function openFenxiang(type,title,summary,pic,desc,url){
+        if(type === 'WX'){
+            $('.weixinFenxiangBox').show();
+            document.getElementById('weixinFenxiangBoxCImg').setAttribute('src','http://www.gbtags.com/gb/qrcode?t='+ (url||document.location) +'&s=300');
+            $('#wxBClose').on('click',function(){ $('.weixinFenxiangBox').hide()});
+            return;
+        }
+        var _shareUrl;
+        var _Url =     encodeURIComponent(url||document.location);
+        var _Title =   encodeURIComponent(title||document.title);
+        var _Summary = encodeURIComponent(summary);
+        var _Desc =    encodeURIComponent(desc);
+        var _pics =    encodeURIComponent(pic);
+        var _width= 800;
+        var _height= 530;
+        switch(type)
+        {
+            case 'WB':
+                _shareUrl = 'http://service.weibo.com/share/share.php?url='+_Url+'&title='+_Title+' %20 '+_Summary+'&pic='+_pics+'&appkey=1974153790';
+                break;
+            case 'QZ':
+                _shareUrl = 'https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url='+_Url+'&showcount=1&site=华质商城&title='+_Title+'&desc='+_Desc+'&summary='+_Summary+'&pics='+_pics;
+                break;
+        }
+        window.open(_shareUrl,'_blank','width='+_width+'+px,height='+_height+'+px,top='+(document.documentElement.clientHeight-_height)/2+'px,left='+(document.documentElement.clientWidth-_width)/2+'px,toolbar=no,menubar=no,scrollbars=no,resizable=no,location=no,status=0');
+    }
+
+
+</script>
+</html>
