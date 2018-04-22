@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>range和selection</title>
+		<script type="text/javascript">
+			function rangeTest(){
+				var html,
+				showRangeDiv = document.getElementById("showRange"),
+				selection = document.getSelection();
+				if(selection.rangeCount > 0)
+				{
+					html = "您选择了" + selection.rangeCount +"段内容<br/>";
+					for(var i = 0; i < selection.rangeCount; i++){
+						var range = selection.getRangeAt(i);
+						html += "第" + (i + 1) + "段的内容为:" + range + "<br/>";
+						
+					}
+					showRangeDiv.innerHTML = html;
+				}
+			}
+			
+		</script>
+	</head>
+	<body>
+		<div>选择的内容是selection</div>
+		<input type="button" value="点击我" onclick="rangeTest()" />
+		<div id="showRange"></div>
+	</body>
+</html>

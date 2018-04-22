@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input name="date1" type="date" value="2010-10-02" />
+		<input name="time" type="time" value="10:00" />
+		<input name="number1" type="number" value="25" min="10" max="100" step="5" />
+		<input type="range" value="25" min="0" max="100" step="5" />
+		<br />
+		<input type="color" onchange="document.body.style.backgroundColor =document.getElementById('currentColor').textContent =this.value;" />
+		<span id="currentColor"></span>
+	</body>
+</html>

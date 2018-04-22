@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			function detail_onclick(detail){
+				var p = document.getElementById('p');
+				if(detail.open){
+					p.style.visibility = "hidden";
+				}else{
+					p.style.visibility = "visible";
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<details id="detail" style="cursor: pointer;" onclick="detail_onclick(this)">
+			<summary>精武风云</summary>
+			<p id="p" style="visibility: hidden;">
+				陈真 当年为报仇杀师之仇
+			</p>
+		</details>
+		
+	</body>
+</html>

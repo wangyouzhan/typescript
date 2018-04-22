@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>wang</div>
+
+
+<script type="application/javascript">
+
+//    var man = {
+//      weibo :'@Bosn',
+//      $age : null,
+//      get age(){
+//        if(this.$age == undefined){
+//            return new Date().getFullYear() - 1988;
+//        }else{
+//            return this.$age;
+//        }
+//      },
+//      set age(val){
+//        val = +val;
+//        if(!isNaN(val) && val > 0 && val < 150){
+//            this.$age = +val;
+//        }else{
+//            throw new Error('Incorrect val = ' + val);
+//        }
+//      }
+//    }
+//
+//    console.log(man.age);
+//    man.age = 100;
+//    console.log(man.age);
+//    man.age = 'abc';
+
+//    var o = {};
+//    var obj = Object.create(o);
+//
+//    Object.defineProperty(obj,'x',{writable:true, configurable:true});
+//    console.log(obj.x);
+//    obj.x = 500;
+//    console.log(obj.x);
+
+
+//    console.log(Object.getOwnPropertyDescriptor({pro:true}, 'pro'));
+
+//    var person = {};
+//    Object.defineProperty(person, 'name',{
+//        configurable: false,
+//        writable: false,
+//        enumerable: true,
+//        value : "Bosn ma"
+//    });
+//
+//    console.log(person.name);
+//    person.name = 1;
+//    console.log(person.name);
+//
+//    delete person.name;
+
+
+//    var toString = Object.prototype.toString;
+//    function getType(o) {
+//        return toString.call(o).slice(8,-1);
+//    }
+//
+//    console.log(toString.call(null));
+//
+//    console.log(getType(undefined));
+//    console.log(getType(1));
+//    console.log(getType(new Number(1)));
+
+
+//    var obj = {x:1,y:2};
+//    console.log(Object.isExtensible(obj));
+//    console.log(Object.preventExtensions(obj));
+//    console.log(Object.isExtensible(obj));
+//    obj.z = 1;
+//    console.log(obj.z);
+//    console.log(Object.getOwnPropertyDescriptor(obj, 'x'));
+//
+//    Object.seal(obj);
+//    console.log(Object.getOwnPropertyDescriptor(obj, 'x'));
+//    console.log(Object.isSealed(obj));
+//
+//
+//    Object.freeze(obj);
+//    console.log(Object.getOwnPropertyDescriptor(obj, 'x'));
+//    console.log(Object.isFrozen(obj));
+
+//    obj = {val:undefined, a:NaN, b: Infinity,c: new Date()};
+//    console.log(JSON.stringify(obj));
+
+//    obj = JSON.parse('{"x":1}');
+//    console.log(obj.x);
+
+
+//    var obj = {
+//      x : 1,
+//      y : 2,
+//      o :{
+//          o1 : 1,
+//          o2 : 2,
+//          toJSON:function () {
+//              return this.o1 + this.o2;
+//          }
+//      }
+//    };
+//
+//    console.log(JSON.stringify(obj));
+
+
+
+    var arr = [1,2];
+    arr.unshift(0);
+    console.log(arr);
+    console.log(arr.shift());
+
+
+
+
+
+
+
+</script>
+
+</body>
+</html>

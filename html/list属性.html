@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>list属性</title>
+		<style type="text/css">
+			input: -ms-input-placeholder{
+				color: blue;
+			}
+			input:-webkit-input-placeholder{
+				color: blue;
+			}		
+		</style>
+	</head>
+	<body>
+		text: <input type="text" name="greeting" list="greetings" />
+		<datalist id="greetings" style="display: none;">
+			<option value="Good">Good Morning</option>
+			<option value="Hello">Hello</option>
+			<option value="Good Afternoon">Good Afternoon</option>
+		</datalist>
+		
+		
+	</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script type="application/javascript">
+    function setValue() {
+        var label = document.getElementById("label");
+        var textbox = label.control;
+        textbox.value = "010010";
+    }
+
+
+</script>
+
+<form>
+    <label id="label">
+        邮编：
+        <input id="txt_zip" maxlength="6" type="text">
+        <input id="txt_zip_2" maxlength="6" type="text">
+        <small>请输入六位数字</small>
+    </label>
+
+    <input type="button" value="设置默认值" onclick="setValue()">
+</form>
+
+</body>
+</html>
